@@ -1,6 +1,7 @@
 {% extends "encyclopedia/layout.html" %}
+
 {% block title %}
-    {{ title }}
+    {{ entries }}
 {% endblock %}
 
 {% block search %}
@@ -12,5 +13,9 @@
 {% endblock %}
 
 {% block body %}
-    <h2>{{ text }}</h2>
+    {% for entry in entries %}
+        {% if query in entry|lower %}
+            <a href = "{% url 'get_entry' entry.title %}"><li>{{ entry }}</li></a>
+        {% endif %}
+    {% endfor %}
 {% endblock %}

@@ -5,20 +5,18 @@
 {% endblock %}
 
 {% block search %}
-    {{ field }}
-    <form action="{% url 'search_field' field.task %}" method="post">
-        {% csrf_token %}
-        <input type="submit">
-    </form>
+<form method="post" action="{% url 'index' %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Search</button>
+</form>
 {% endblock %}
 
 {% block body %}
     <h1>All Pages</h1>
-
     <ul>
         {% for entry in entries %}
                 <a href = "{% url 'get_entry' entry.title %}"><li>{{ entry }}</li></a>
         {% endfor %}
     </ul>
-
 {% endblock %}

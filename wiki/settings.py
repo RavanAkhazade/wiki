@@ -55,10 +55,7 @@ ROOT_URLCONF = 'wiki.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-                os.path.join(BASE_DIR, 'templates'),
-                'C:\\Users\\User\\PycharmProjects\\wiki\\entries'
-                ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
